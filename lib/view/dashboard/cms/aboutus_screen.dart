@@ -1,3 +1,4 @@
+import 'package:digitalwebber/view/dashboard/cms/widgets/client_tag_widget.dart';
 import 'package:digitalwebber/view/dashboard/cms/widgets/infocard_widget.dart';
 import 'package:digitalwebber/view/util/const.dart';
 
@@ -23,40 +24,33 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
             children: [
               Container(
                   width: double.infinity,
-                  height: 350,
-                  decoration: BoxDecoration(
+                  height: 350.h,
+                  decoration: const BoxDecoration(
                       gradient: LinearGradient(colors: <Color>[
                     kSecondary,
                     kSecondary,
                     kSecondary2,
                     kSecondary3,
-                    Colors.grey.shade100
+                    // kSecondary4,
+                    kBackground
                   ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
                   // color: const Color.fromARGB(255, 9, 47, 108),
-                  padding: const EdgeInsets.all(12),
-                  margin: const EdgeInsets.only(bottom: 22),
+                  padding: EdgeInsets.all(12.h),
+                  margin: EdgeInsets.only(bottom: 22.h),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       customLogo('assets/logo.png', size: 58, onTap: () {}),
-                      const SizedBox(
-                        height: 12,
-                      ),
+                      SizedBox(height: 12.h),
                       customHeading('About Us'),
                       customText(
                           'Digital Webber produces uniquely creative and innovative design and flawless and bug free coding which ensures seamless execution and high performance. !!!',
-                          fontSize: 18.sp,
-                          color: Colors.white),
-                      SizedBox(
-                        height: 24.h,
-                      ),
+                          fontSize: 16.sp,
+                          color: kWhite),
+                      SizedBox(height: 24.h),
                     ],
                   )),
-              Center(
-                child: customText('WHO WE ARE?',
-                    fontSize: 18, color: Colors.black),
-              ),
               Stack(
                 alignment: Alignment.center,
                 children: [
@@ -73,34 +67,32 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                       itemBuilder: ((context, index) {
                         var item = featureList[index];
                         return Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(8.h),
                           child: ListTile(
                             leading: const Icon(Icons.arrow_forward_ios),
                             title: customText(item[0],
                                 overflow: TextOverflow.visible,
                                 color: const Color.fromARGB(255, 34, 34, 34)
-                                // style: const TextStyle(color: Colors.black87),
+                                // style: const TextStyle(color: kBlack87),
                                 ),
                           ),
                         );
                       })),
                 ],
               ),
-              SizedBox(
-                height: 18.h,
-              ),
+              SizedBox(height: 18.h),
               Container(
-                margin: const EdgeInsets.all(12),
-                padding: const EdgeInsets.all(18),
+                margin: EdgeInsets.all(12.h),
+                padding: EdgeInsets.all(18.h),
                 decoration: BoxDecoration(
                     color: kSecondary.withOpacity(.4),
-                    borderRadius: BorderRadius.circular(24)),
+                    borderRadius: BorderRadius.circular(24.r)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     customHeading(
                       'Intelligent &\nCreative',
-                      color: Colors.black87,
+                      color: kBlack87,
                     ),
                     Divider(
                       color: kSecondary,
@@ -108,7 +100,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                     ),
                     customText(
                       data,
-                      color: Colors.black54,
+                      color: kBlack54,
                     ),
                     Divider(
                       color: kSecondary,
@@ -119,13 +111,13 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(12),
+                padding: EdgeInsets.all(12.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     customHeading(
                       'Our Success &\nAchievements',
-                      color: Colors.black87,
+                      color: kBlack87,
                     ),
                     Divider(
                       color: kPrimary,
@@ -161,51 +153,30 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
               ),
               Container(
                 decoration: const BoxDecoration(),
-                padding: const EdgeInsets.all(12),
+                padding: EdgeInsets.all(12.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     customHeading(
                       'We Work With',
-                      color: Colors.black87,
+                      color: kBlack87,
                     ),
-                    const SizedBox(
-                      height: 12,
-                    ),
+                    SizedBox(height: 12.h),
                     customText(
                         "It was a long journey to come where we are now. Here is how we started.",
-                        color: Colors.black54),
+                        color: kBlack54),
                     ListView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
-                        padding: const EdgeInsets.all(12),
+                        padding: EdgeInsets.all(12.h),
                         itemCount: clientList.length,
                         itemBuilder: (context, index) {
                           var item = clientList[index];
-                          return GestureDetector(
+                          return ClientTagWidget(
+                            image: item[0],
                             onTap: () {
                               launchWebsite(item[1]);
                             },
-                            child: Container(
-                              padding: const EdgeInsets.all(12),
-                              margin: const EdgeInsets.only(bottom: 12),
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(5),
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        blurRadius: 8,
-                                        color:
-                                            Color.fromARGB(255, 219, 216, 216),
-                                        blurStyle: BlurStyle.outer),
-                                  ]),
-                              child: Center(
-                                child: Image.asset(
-                                  item[0],
-                                  height: 36,
-                                ),
-                              ),
-                            ),
                           );
                         }),
                     SizedBox(height: 8.h),
@@ -230,9 +201,9 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
     ["Website Modification Consulting & Structure Data Implementation"],
     ["Structure Data Implementation & Monthly SEO Reports"],
   ];
-  static const infoList = [
+  static final infoList = [
     ["302+", "Happy Customer", Colors.pink],
-    ["502+", "Hosting Servers Sold", Colors.black],
+    ["502+", "Hosting Servers Sold", kBlack],
     ["150+", "Our Data Centers", Colors.deepOrange],
     ["690+", "Team Members", Colors.teal],
   ];

@@ -1,10 +1,20 @@
+import 'package:digitalwebber/view/util/const.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomRichTextWidget extends StatelessWidget {
   const CustomRichTextWidget(
-      {super.key, required this.title, required this.subtitle});
+      {super.key,
+      required this.title,
+      required this.subtitle,
+      this.color,
+      this.fontWeight,
+      this.subColor});
   final String title;
   final String subtitle;
+  final Color? color;
+  final Color? subColor;
+  final FontWeight? fontWeight;
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +24,11 @@ class CustomRichTextWidget extends StatelessWidget {
       children: [
         TextSpan(
             text: subtitle,
-            style: const TextStyle(fontWeight: FontWeight.normal, height: 1.4))
+            style: TextStyle(
+                fontWeight: fwNormal, height: 1.4.h, color: subColor)),
       ],
-      style: const TextStyle(fontWeight: FontWeight.bold),
+      style: TextStyle(
+          color: color ?? kBlack87, fontWeight: fontWeight ?? FontWeight.bold),
     ));
   }
 }

@@ -1,12 +1,8 @@
 import 'package:digitalwebber/demo.dart';
-
-import 'package:digitalwebber/view/dashboard/homescreen/digital_marketing/website_design_screen.dart';
-import 'package:digitalwebber/view/dashboard/homescreen/mobile_app/mobile_app_screen.dart';
-import 'package:digitalwebber/view/dashboard/homescreen/video_production/video_production_screen.dart';
-import 'package:digitalwebber/view/dashboard/homescreen/website_design/website_design_screen.dart';
+import 'package:digitalwebber/view/util/widgets_global/design_template_screen.dart';
 import 'package:digitalwebber/view/dashboard/homescreen/widgets/card_widget.dart';
-import 'package:digitalwebber/view/dashboard/homescreen/widgets/drawer_widget.dart';
-import 'package:digitalwebber/view/dashboard/homescreen/widgets/social_card_widget.dart';
+import 'package:digitalwebber/view/dashboard/homescreen/drawer_main_screen.dart';
+
 import 'package:digitalwebber/view/util/const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,9 +16,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Container(
       color: kPrimary2,
       child: SafeArea(
@@ -30,8 +26,10 @@ class _HomeScreenState extends State<HomeScreen> {
             resizeToAvoidBottomInset: false,
             key: _scaffoldKey,
             backgroundColor: kBackground,
-            drawer: const DrawerWidget(),
+            drawer: const DrawerMainScreen(),
+            // drawer: const Demo(),
             body: SingleChildScrollView(
+              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
               physics: const ScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,8 +42,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter)),
                       // color: const Color.fromARGB(255, 9, 47, 108),
-                      padding: const EdgeInsets.all(12),
-                      margin: const EdgeInsets.only(bottom: 22),
+                      padding: EdgeInsets.all(12.h),
+                      margin: EdgeInsets.only(bottom: 22.h),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -59,13 +57,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                 decoration: BoxDecoration(
                                     color: kPrimary,
                                     borderRadius: BorderRadius.circular(12.r)),
-                                padding: const EdgeInsets.all(0),
+                                padding: EdgeInsets.all(0.h),
                                 child: IconButton(
                                   color: kPrimary2,
                                   icon: Icon(
                                     Icons.menu,
                                     size: 28.h,
-                                    color: Colors.white,
+                                    color: kWhite,
                                   ),
                                   onPressed: () {
                                     _scaffoldKey.currentState!.openDrawer();
@@ -74,55 +72,47 @@ class _HomeScreenState extends State<HomeScreen> {
                               )
                             ],
                           ),
-                          const SizedBox(
-                            height: 12,
-                          ),
-                          customHeading(
-                            "Better Ideas\nFor First\nGrowth",
-                          ),
-                          const SizedBox(
-                            height: 18,
-                          ),
+                          SizedBox(height: 12.h),
+                          customHeading("Better Ideas\nFor First\nGrowth",
+                              color: kWhite),
+                          SizedBox(height: 18.h),
                           customText(
-                              'We are a full-service digital marketing firm that provides you with the ability to customize PPC, lead generation, inbound marketing, email campaigns, SEO-based responsive websites, marketing automation solutions, and more.'),
-                          const SizedBox(
-                            height: 18,
-                          ),
+                              'We are a full-service digital marketing firm that provides you with the ability to customize PPC, lead generation, inbound marketing, email campaigns, SEO-based responsive websites, marketing automation solutions, and more.',
+                              color: kWhite),
+                          SizedBox(height: 18.h),
                           customOutlineButton(
                             'Call Us',
                           ),
-                          const SizedBox(
-                            height: 18,
-                          ),
+                          SizedBox(height: 18.h),
                           customOutlineIconButton('+1 888-927-7332', onTap: () {
                             launchPhoneNumber('+1 888-927-7332');
                           }, icon: Icons.call),
-                          const SizedBox(
-                            height: 18,
-                          ),
-                          customHeading("Connect with us", fontSize: 24),
-                          const SizedBox(
-                            height: 18,
-                          ),
+                          SizedBox(height: 18.h),
+                          customHeading("Connect with us",
+                              fontSize: 24.sp, color: kWhite),
+                          SizedBox(height: 18.h),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               customLogo(
                                 'assets/icons/fb.png',
                                 onTap: () {
-                                  launchWebsite("https://www.facebook.com");
+                                  launchWebsite(
+                                      "https://www.facebook.com/digitalwebber/");
                                 },
                               ),
                               customLogo(
                                 'assets/icons/insta.png',
                                 onTap: () {
-                                  launchWebsite("https://www.instagram.com");
+                                  launchWebsite(
+                                      "https://www.instagram.com/digital_webber/");
                                 },
                               ),
                               customLogo(
                                 'assets/icons/twitter.png',
                                 onTap: () {
-                                  launchWebsite("https://www.twitter.com");
+                                  launchWebsite(
+                                      "https://twitter.com/digiwebber?lang=en");
                                 },
                               ),
                               customLogo(
@@ -135,17 +125,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                 'assets/icons/whatsapp.png',
                                 onTap: () {
                                   launchPlayStoreApp("com.whatsapp");
+                                  launchWebsite(
+                                      "https://wa.me/${"+918697844308"}?text=Hi\nI'm Interested.");
                                 },
                               ),
                             ],
                           ),
-                          const SizedBox(
-                            height: 18,
-                          ),
+                          SizedBox(height: 18.h),
                         ],
                       )),
                   /* SizedBox(
-                    height: 250,
+                    height: 250.h,
                     child: ListView.separated(
                         shrinkWrap: true,
                         separatorBuilder: (context, i) => const VerticalDivider(
@@ -165,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         }),
                   ), */
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    padding: EdgeInsets.symmetric(horizontal: 12.w),
                     child: GridView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
@@ -189,7 +179,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const WebsiteDesignScreen()));
+                                              DesignTemplateScreen(
+                                                index: index,
+                                                headerData: cardDataList,
+                                                listItem: websiteList,
+                                                iconList: iconData,
+                                              )));
 
                                   break;
                                 case 1:
@@ -197,7 +192,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const DigitalMarketingScreen()));
+                                              DesignTemplateScreen(
+                                                index: index,
+                                                headerData: cardDataList,
+                                                listItem: mobileList,
+                                                iconList: iconData,
+                                              )));
 
                                   break;
                                 case 2:
@@ -205,7 +205,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const MobileScreen()));
+                                              DesignTemplateScreen(
+                                                index: index,
+                                                headerData: cardDataList,
+                                                listItem: digitalList,
+                                                iconList: iconData,
+                                              )));
 
                                   break;
                                 case 3:
@@ -213,7 +218,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const VideoProductionScreen()));
+                                              DesignTemplateScreen(
+                                                index: index,
+                                                headerData: cardDataList,
+                                                listItem: videoList,
+                                                iconList: iconData,
+                                              )));
 
                                   break;
                                 default:
@@ -224,12 +234,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         }),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 36, horizontal: 18),
+                    padding:
+                        EdgeInsets.symmetric(vertical: 36.h, horizontal: 18.w),
                     child: Column(
                       children: [
-                        customText('WHO WE ARE?',
-                            fontSize: 18, color: Colors.black),
+                        customText('WHO WE ARE?', fontSize: 18.sp),
                         ListView.builder(
                             shrinkWrap: true,
                             itemCount: featureList.length,
@@ -237,7 +246,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             itemBuilder: ((context, index) {
                               var item = featureList[index];
                               return Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(8.h),
                                 child: Wrap(
                                   alignment: WrapAlignment.center,
                                   children: [
@@ -245,10 +254,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Text(
                                       item[0],
                                       overflow: TextOverflow.visible,
-                                      style: const TextStyle(
-                                          color: Colors.black87),
+                                      style: TextStyle(color: kBlack87),
                                     ),
-                                    // customText(item[0], color: Colors.black45)
+                                    // customText(item[0], color: kBlack45)
                                   ],
                                 ),
                               );
@@ -260,11 +268,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   //   color: Colors.green,
                   //   width: size.width,
                   //   // height: 80,
-                  //   margin: const EdgeInsets.only(bottom: 22),
+                  //   margin:  EdgeInsets.only(bottom: 22.h),
                   //   padding: const EdgeInsets.symmetric(
                   //       horizontal: 18, vertical: 22),
                   //   child: customHeading('Our Specialization',
-                  //       fontSize: 36, textAlign: TextAlign.center),
+                  //       fontSize: 36.sp, textAlign: TextAlign.center),
                   // ),
                   // ListView.separated(
                   //   separatorBuilder: (context, index) => const Divider(
@@ -309,16 +317,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         end: Alignment.bottomCenter,
                       ),
                     ),
-                    padding: const EdgeInsets.all(18),
+                    padding: EdgeInsets.all(18.h),
                     child: Column(
                       children: [
                         customText('WHAT WE ACHIEVE?',
-                            fontSize: 18, color: kBackground),
+                            fontSize: 18.sp, color: kBackground),
                         ListView.separated(
-                            separatorBuilder: (context, index) => const Divider(
+                            separatorBuilder: (context, index) => Divider(
                                   indent: 50,
                                   endIndent: 50,
-                                  height: 20,
+                                  height: 20.h,
                                 ),
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
@@ -326,14 +334,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             itemBuilder: ((context, index) {
                               var item = clientList[index];
                               return Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(8.h),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     customHeading(item[0]),
                                     customText(item[1],
                                         color: Colors.grey.shade300,
-                                        fontSize: 22),
+                                        fontSize: 22.sp),
                                   ],
                                 ),
                               );
@@ -344,8 +352,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   /* Container(
                       decoration: BoxDecoration(
                           color: Colors.deepPurpleAccent.withOpacity(.1)),
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 36, horizontal: 12),
+                      padding:  EdgeInsets.symmetric(
+                          vertical: 36.h, horizontal: 12.w),
                       // margin: const EdgeInsets.only(bottom: 20),
                       // height: 500,
                       width: size.width,
@@ -383,10 +391,34 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   static const cardDataList = [
-    ["Website Design", "assets/sitedata/website.png"],
-    ["Digital Marketing", "assets/sitedata/digital.png"],
-    ["Mobile App", "assets/sitedata/mobile.png"],
-    ["Video Production", "assets/sitedata/video.png"],
+    [
+      "Website Design",
+      "assets/sitedata/website.png",
+      "Website Design & Devs",
+      "Website\nDevelopment",
+      "Custom PHP development Crafting digital experiences that inspire and engage",
+    ],
+    [
+      "Mobile App",
+      "assets/sitedata/mobile.png",
+      "Mobile Application",
+      "Mobile Application Development",
+      "App development became simpler.In this exciting app development journey, start your own chapter. Every app is a journey to get going.",
+    ],
+    [
+      "Digital Marketing",
+      "assets/sitedata/digital.png",
+      "Search Engine Optimization",
+      "The right SEO strategies for your success",
+      "Get into the search habit. Every SEO has a story to tell.",
+    ],
+    [
+      "Video Production",
+      "assets/sitedata/video.png",
+      "Video Editing",
+      "Start your video editing",
+      "The powerful visuals that move your business forward.",
+    ],
   ];
   static const featureList = [
     ["We believe in cost-effective and productive solutions, which we offer."],
@@ -398,34 +430,116 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   static const clientList = [
     ["1900+", "Clients"],
-    ["80 %", "Success Rate"],
-    ["90 %", "Client Retention Rate"],
+    ["80%", "Success Rate"],
+    ["90%", "Client Retention Rate"],
     ["1400+", "Project Delivery"],
   ];
-  static const socialCardList = [
+  static const iconData = [
+    "assets/homeicon/web1_graphic.png",
+    "assets/homeicon/web2_bootstrapping.png",
+    "assets/homeicon/web3_optimized.png",
+    "assets/homeicon/web4_content.png",
+    "assets/homeicon/web5_security.png",
+    "assets/homeicon/web6_bug.png"
+  ];
+  static const List websiteList = [
     [
-      "Social Media Marketing",
-      "assets/sitedata/website.png",
-      "We have continually progressed and are becoming a powerful online marketing resource for companies and brands on social media platforms like Facebook, Twitter, LinkedIn, Pinterest, and Instagram.",
-      Colors.purple
+      "Graphic Interface",
+      "A specialization of web design that deals with the controls people use to interact with a website or app, including button displays and gesture controls.",
     ],
     [
-      "Email Marketing",
-      "assets/sitedata/digital.png",
-      "Our engaging emails encourage customers to become more interested in your business. Our campaign's success depends on sending email to the right person at the right time.",
-      Colors.orange
+      "Bootstrapping",
+      "The technical part of making a website, focusing on code. Web development is further divided into “front-end” and “back-end,” explained below",
     ],
     [
-      "SEO Management",
-      "assets/sitedata/mobile.png",
-      "Grow your business by using the recommended SEO strategies by our SEO experts to reach your targeted audience so they can easily discover your website in a more timely manner.",
-      Colors.pink
+      "Screen Optimized",
+      "The process of making sure content is written in a way that it can reach the largest possible target audience. The process of optimizing content should include keywords.",
     ],
     [
-      "Search Engine Marketing\n(SEM)",
-      "assets/sitedata/video.png",
-      "Our engaging emails encourage customers to become more interested in your business. Our campaign's success depends on sending email to the right person at the right time.",
-      Colors.blueAccent
+      "Content Update",
+      "Before you actually start making updates to your site, check your SEO & Add some multimedia elements to your site when you’re updating your website content.",
+    ],
+    [
+      "Application Security",
+      "The idea of building websites to function as expected, even when they are under attack. The concept involves a collection of security controls engineered into a Web application.",
+    ],
+    [
+      "Error/Bug Fixing",
+      "Bugs are going to happen, no matter how good the web developers are. It is important to understand the types of bugs in order to focus on the more dangerous process.",
+    ],
+  ];
+  static const List mobileList = [
+    [
+      "Custom-made",
+      "Our accomplished team of developers create mobile applications that are personalized to meet your specific business requirements. We work assiduously to ensure that the application is tailored to your needs.",
+    ],
+    [
+      "User-Centric",
+      "We recognize the paramount importance of user experience and design our applications with a user-centric interface. This guarantees that your customers have a seamless experience while using your application.",
+    ],
+    [
+      "Cross-Platform",
+      "We develop mobile applications that are compatible with both iOS and Android platforms, enabling you to reach a wider audience.",
+    ],
+    [
+      "Punctual Delivery",
+      "We place a high premium on your time and ensure that your mobile application is developed and delivered within the agreed timeframe.",
+    ],
+    [
+      "Competitive Pricing",
+      "Our pricing structure is highly competitive and transparent, without any concealed charges. We offer affordable pricing for our services, without compromising on quality.",
+    ],
+    [
+      "24/7 Support",
+      "We provide round-the-clock support to our esteemed clients, ensuring that their queries are promptly and efficiently addressed.",
+    ],
+  ];
+  static const List digitalList = [
+    [
+      "Keyword Research",
+      "We prioritise keyword research, which tells us how your customers are finding you and where they're finding your competitors. We provide strategic analysis to identify valuable organic traffic opportunities for your business and website. Our keyword research identifies the queries people use to find relevant websites and pages.",
+    ],
+    [
+      "Competitor Research",
+      "We give high priority to the process of identifying the strengths and weaknesses of your and your competitors' SEO. To reach your goal, rather than focusing on marketing strategy, you should focus on SEO strategy. Much like a typical competitive analysis, discover any gaps between you and your competitor with our research.",
+    ],
+    [
+      "Off Page SEO",
+      "Optimizing for off-site ranking factors for your valuable business involves improving search engine and user perceptions of your site's popularity, trustworthiness, relevance, and authority.",
+    ],
+    [
+      "On-page SEO",
+      "Our on-page SEO services come in a variety of sizes and shapes, all of which are based on data and scientific techniques. Through planning, execution, and reporting, our SEO service involves hands-on technical and strategic support at all stages of the process.",
+    ],
+    [
+      "Content Optimization",
+      "With each passing day, assist you in increasing traffic to your website. Enhance it with our tried-and-true content optimization processes developed over a decade of experience, and work on your existing content.",
+    ],
+  ];
+  static const List videoList = [
+    [
+      "Film Making",
+      "Filmmaking for your specific needs is a trend that is increasing day by day. It has become the most powerful marketing and promotional tool. We create films as per your needs for product marketing.",
+    ],
+    [
+      "Advertisement Promo Video",
+      "The smart choice for your next video advertisement, made with stunning visuals and brandable templates. Create video advertisements that will get more clicks and increase revenue for your concern. Services are available for businesses of all sizes.",
+    ],
+    [
+      "Video Color Grading",
+      "Get expert colour grading and colour correction for all types of videos. Our experts in colour correction assist individuals with creative adjustments in transforming their raw footage into cinematic-quality videos. We are in charge of perfectly grading footage in accordance with standards.",
+    ],
+    [
+      "Short Promo Video",
+      "Choose the promo video that best fits your event, business, and product. A major percentage of customers would rather learn about a product or service through video, and the rest of the marketers say video helps increase their sales.",
+    ],
+    [
+      "Corporate Presentation",
+      "Modern slide designs not only save time but also provide exclusive, elegant, and unique graphic content. Visually appealing slides get maximum audience attention, which helps them relate to the presenter’s words.",
+    ],
+    [
+      "Infographic Video Making",
+      "Entertain and inform with exceptional, gorgeous, animated infographics. Ask for a service to become an expert infographic video maker in no time. It's as easy as choosing your preferred template and editing the text. Before you’ve finished your morning coffee, get started with your morning coffee.",
     ],
   ];
 }

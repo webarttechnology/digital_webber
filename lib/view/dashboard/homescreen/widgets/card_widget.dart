@@ -19,8 +19,8 @@ class CardWidget extends StatelessWidget {
       child: Container(
         width: .5.sw,
         decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(22),
+            color: kWhite,
+            borderRadius: BorderRadius.circular(22.r),
             boxShadow: const [
               BoxShadow(
                   blurRadius: 10,
@@ -34,7 +34,7 @@ class CardWidget extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(22),
+                  borderRadius: BorderRadius.circular(22.r),
                   child: Image.asset(
                     'assets/sitedata/card-bg.png',
                     // width: double.infinity,
@@ -44,21 +44,22 @@ class CardWidget extends StatelessWidget {
                 ),
                 Image.asset(
                   imageName,
-                  height: 80,
-                  width: 80,
+                  height: 80.h,
+                  width: 80.h,
                 ),
               ],
             ),
             Container(
                 // width: size.width,
-                height: 42,
-                decoration: const BoxDecoration(
+                height: 42.h,
+                decoration: BoxDecoration(
                     color: kPrimary,
                     borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(22),
-                        bottomRight: Radius.circular(22))),
+                        bottomLeft: Radius.circular(22.r),
+                        bottomRight: Radius.circular(22.r))),
                 child: Center(
-                  child: customText(text, textAlign: TextAlign.center),
+                  child: customText(text,
+                      textAlign: TextAlign.center, color: kWhite),
                 ))
           ],
         ),

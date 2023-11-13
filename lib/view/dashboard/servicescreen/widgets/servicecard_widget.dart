@@ -25,7 +25,7 @@ class ServiceCard extends StatelessWidget {
       child: Container(
         width: double.infinity,
         // height: _height,
-        margin: const EdgeInsets.all(8),
+        margin: EdgeInsets.all(8.h),
         decoration: BoxDecoration(
           color: color.withOpacity(.3),
           borderRadius: BorderRadius.circular(24.r),
@@ -38,17 +38,17 @@ class ServiceCard extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(16.h),
                   child: Image.asset(
                     imageName,
                     opacity: const AlwaysStoppedAnimation(.4),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: EdgeInsets.all(16.h),
                   child: customText(
                     content,
-                    color: Colors.black54,
+                    color: kBlack54,
                   ),
                 )
               ],

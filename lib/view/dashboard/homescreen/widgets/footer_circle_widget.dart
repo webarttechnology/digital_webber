@@ -16,12 +16,12 @@ class FooterCircleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(12),
+      padding: EdgeInsets.all(12.h),
       width: double.infinity,
-      // margin: const EdgeInsets.symmetric(horizontal: 12),
+      // margin:  EdgeInsets.symmetric(horizontal: 12.w),
       decoration: BoxDecoration(
           color: color.withOpacity(.2),
-          borderRadius: BorderRadius.circular(24)),
+          borderRadius: BorderRadius.circular(24.r)),
       child: Column(
         children: [
           CircleAvatar(

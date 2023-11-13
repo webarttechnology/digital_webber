@@ -1,7 +1,6 @@
 import 'dart:async';
-
 import 'package:digitalwebber/view/dashboard/cms/aboutus_screen.dart';
-import 'package:digitalwebber/view/dashboard/cms/enquiry_screen.dart';
+import 'package:digitalwebber/view/dashboard/cms/contact_screen.dart';
 import 'package:digitalwebber/view/dashboard/homescreen/home_screen.dart';
 import 'package:digitalwebber/view/dashboard/servicescreen/service_screen.dart';
 import 'package:digitalwebber/view/util/const.dart';
@@ -9,9 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       systemNavigationBarColor: kPrimary2, statusBarColor: kPrimary2));
+  // await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
   runApp(const MyApp());
 }
 
@@ -24,16 +24,21 @@ class MyApp extends StatelessWidget {
       designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
+      useInheritedMediaQuery: true,
       builder: (_, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Digital Webber',
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: kPrimary),
-            useMaterial3: true,
-            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+        return GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          //FocusManager.instance.primaryFocus?.unfocus(),
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Digital Webber',
+            theme: ThemeData(
+              colorScheme: ColorScheme.fromSeed(seedColor: kPrimary),
+              useMaterial3: true,
+              textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+            ),
+            home: child,
           ),
-          home: child,
         );
       },
       child: const SplashScreen(),
@@ -88,9 +93,16 @@ class _DashboardTabState extends State<DashboardTab> {
   final List _pages = [
     const HomeScreen(),
     const ServiceScreen(),
-    const EnquiryScreen(),
+    const ContactScreen(),
     const AboutUsScreen()
   ];
+  @override
+  void initState() {
+    super.initState();
+    if (_selectedIndex != _selectedIndex) {
+      FocusScope.of(context).unfocus();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -103,9 +115,9 @@ class _DashboardTabState extends State<DashboardTab> {
         backgroundColor: Colors.green.shade50,
         onTap: _onItemTapped,
         selectedItemColor: kPrimary,
-        selectedFontSize: 12,
+        selectedFontSize: 12.sp,
         type: BottomNavigationBarType.fixed,
-        unselectedFontSize: 11,
+        unselectedFontSize: 11.sp,
         unselectedItemColor: kSecondary3,
         unselectedLabelStyle: const TextStyle(color: kSecondary3),
         elevation: 20,
@@ -136,7 +148,7 @@ class _DashboardTabState extends State<DashboardTab> {
         shape: const CircleBorder(),
         tooltip: 'Contact Support',
         backgroundColor: kPrimary,
-        foregroundColor: Colors.black,
+        foregroundColor: kBlack,
         elevation: 20,
         child: CircleAvatar(
           backgroundColor: Colors.orange.shade300,

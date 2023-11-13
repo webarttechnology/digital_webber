@@ -18,9 +18,10 @@ class ContactWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        customHeading(title, fontSize: 24),
+        customHeading(title, fontSize: 24.sp),
         Divider(
           // indent: .02.sw,
+          color: kWhite,
           endIndent: .6.sw,
           height: 20,
         ),
@@ -28,7 +29,7 @@ class ContactWidget extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             itemCount: itemList.length,
-            padding: const EdgeInsets.symmetric(horizontal: 5),
+            padding: EdgeInsets.symmetric(horizontal: 5.w),
             separatorBuilder: (context, index) => SizedBox(height: 5.h),
             itemBuilder: (context, index) {
               var item = itemList[index];
@@ -48,12 +49,13 @@ class ContactWidget extends StatelessWidget {
                     (item[0].isEmpty)
                         ? const SizedBox()
                         : Padding(
-                            padding: const EdgeInsets.only(top: 5),
-                            child: customHeading(item[0], fontSize: 16),
+                            padding: EdgeInsets.only(top: 5.h),
+                            child: customHeading(item[0], fontSize: 16.sp),
                           ),
                     CustomRichTextWidget(
                       title: "${item[1]} : ",
                       subtitle: item[2],
+                      color: kWhite,
                     ),
                   ],
                 ),

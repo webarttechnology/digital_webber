@@ -1,5 +1,6 @@
 import 'package:digitalwebber/view/util/const.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SocialCardWidget extends StatelessWidget {
   const SocialCardWidget(
@@ -21,18 +22,15 @@ class SocialCardWidget extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: size.width,
-        margin: const EdgeInsets.only(
-          left: 18,
-          right: 18,
-        ),
-        padding: const EdgeInsets.all(16),
+        margin: EdgeInsets.symmetric(horizontal: 18.w),
+        padding: EdgeInsets.all(16.h),
         decoration: BoxDecoration(
             color: color.withOpacity(.2),
-            borderRadius: BorderRadius.circular(22),
-            boxShadow: const [
+            borderRadius: BorderRadius.circular(22.r),
+            boxShadow: [
               BoxShadow(
-                  blurRadius: 10,
-                  color: Color.fromARGB(255, 219, 216, 216),
+                  blurRadius: 10.r,
+                  color: const Color.fromARGB(255, 219, 216, 216),
                   blurStyle: BlurStyle.outer),
             ]),
         child: Column(
@@ -43,26 +41,26 @@ class SocialCardWidget extends StatelessWidget {
               children: [
                 Image.asset(
                   imageName,
-                  // color: Colors.white70,
+                  // color: kWhite70,
                   opacity: const AlwaysStoppedAnimation(.2),
-                  height: 100,
-                  width: 100,
+                  height: 100.h,
+                  width: 100.h,
                 ),
                 Text(
                   subtitle,
-                  style: const TextStyle(color: Colors.black54),
+                  style: TextStyle(color: kBlack54),
                 ),
               ],
             ),
             Container(
                 width: size.width,
-                height: 55,
-                margin: const EdgeInsets.only(top: 18),
+                height: 55.h,
+                margin: EdgeInsets.only(top: 18.h),
                 decoration: BoxDecoration(
                     color: color.withOpacity(.8),
-                    borderRadius: const BorderRadius.only(
-                        bottomLeft: Radius.circular(22),
-                        bottomRight: Radius.circular(22))),
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(22.r),
+                        bottomRight: Radius.circular(22.r))),
                 child: Center(
                   child: customText(title, textAlign: TextAlign.center),
                 ))

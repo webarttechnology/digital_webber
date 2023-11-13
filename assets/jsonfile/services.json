@@ -1,0 +1,306 @@
+{
+    "services": [
+        {
+            "qoutes": "“Assumptions are the termites of relationships.”",
+            "author": "-Henry Winkler.",
+            "iconList": [
+                "assets/homeicon/web1_graphics.png",
+                "assets/homeicon/web2_bootstrapping.png",
+                "assets/homeicon/web3_optimized.png",
+                "assets/homeicon/web4_content.png",
+                "assets/homeicon/web5_security.png",
+                "assets/homeicon/web6_bug.png"
+            ],
+            "serviceList": [
+                {
+                    "id": "1",
+                    "title": "Web Development",
+                    "image": "assets/sitedata/website.png",
+                    "serviceData": {
+                        "heading": "Website Development",
+                        "title": "Website Development",
+                        "subtitle": "Custom PHP development.Crafting digital experiences that inspire and engage",
+                        "item": [
+                            {
+                                "name": "Graphics Interface",
+                                "description": "A specialization of web design that deals with the controls people use to interact with a website or app, including button displays and gesture controls."
+                            },
+                            {
+                                "name": "Bootstrapping",
+                                "description": "The technical part of making a website, focusing on code. Web development is further divided into “front-end” and “back-end,” explained below"
+                            },
+                            {
+                                "name": "Screen Optimized",
+                                "description": "The process of making sure content is written in a way that it can reach the largest possible target audience. The process of optimizing content should include keywords."
+                            },
+                            {
+                                "name": "Content Update",
+                                "description": "Before you actually start making updates to your site, check your SEO & Add some multimedia elements to your site when you’re updating your website content."
+                            },
+                            {
+                                "name": "Application Security",
+                                "description": "The idea of building websites to function as expected, even when they are under attack. The concept involves a collection of security controls engineered into a Web application."
+                            },
+                            {
+                                "name": "Error/Bug Fixing",
+                                "description": "Bugs are going to happen, no matter how good the web developers are. It is important to understand the types of bugs in order to focus on the more dangerous process."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "2",
+                    "title": "SEO",
+                    "image": "assets/sitedata/seo.png",
+                    "serviceData": {
+                        "heading": "Website Development",
+                        "title": "Website Development",
+                        "subtitle": "Custom PHP development.Crafting digital experiences that inspire and engage",
+                        "item": [
+                            {
+                                "name": "Graphics Interface",
+                                "description": "A specialization of web design that deals with the controls people use to interact with a website or app, including button displays and gesture controls."
+                            },
+                            {
+                                "name": "Bootstrapping",
+                                "description": "The technical part of making a website, focusing on code. Web development is further divided into “front-end” and “back-end,” explained below"
+                            },
+                            {
+                                "name": "Screen Optimized",
+                                "description": "The process of making sure content is written in a way that it can reach the largest possible target audience. The process of optimizing content should include keywords."
+                            },
+                            {
+                                "name": "Content Update",
+                                "description": "Before you actually start making updates to your site, check your SEO & Add some multimedia elements to your site when you’re updating your website content."
+                            },
+                            {
+                                "name": "Application Security",
+                                "description": "The idea of building websites to function as expected, even when they are under attack. The concept involves a collection of security controls engineered into a Web application."
+                            },
+                            {
+                                "name": "Error/Bug Fixing",
+                                "description": "Bugs are going to happen, no matter how good the web developers are. It is important to understand the types of bugs in order to focus on the more dangerous process."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "3",
+                    "title": "SMO",
+                    "image": "assets/sitedata/smo.png",
+                    "serviceData": {
+                        "heading": "Social Media Optimization",
+                        "title": "SMO is Our Forte",
+                        "subtitle": "Stay digitally alive with us.Make your brand's digital presence known on social media with the best SMO service for Facebook, Instagram, and Pinterest.",
+                        "item": [
+                            {
+                                "name": "Increase Exposure",
+                                "description": "It is important to have a solid social media following to build a successful business. Twitter, Instagram, and Facebook help boost engagement, reinforce your brand, and improve traffic to your website."
+                            },
+                            {
+                                "name": "Increase Traffic",
+                                "description": "Our target is to naturally increase your social media referral traffic. Our strategy that helps you increase your engagement, social media reach, and number of followers will also help get more eyes on your posts and profile and grow brand familiarity."
+                            },
+                            {
+                                "name": "Generate Leads",
+                                "description": "Apart from brand awareness and customer service, we are here to generate leads for your concerns. For your business, we value the importance of SMO, and with our strategy, we used it to attract customers and generate more leads."
+                            },
+                            {
+                                "name": "Increase Engagement",
+                                "description": "Businesses use marketing strategies because this is key to sales, and social channels allow businesses to interact directly with customers. Our SMO can help you do what you're doing even better, from improving engagement to gaining new followers."
+                            },
+                            {
+                                "name": "Increase Followers",
+                                "description": "Several brands are competing for audience attention on social media platforms. Our advanced social media strategy is the most effective way to optimize social media accounts."
+                            },
+                            {
+                                "name": "Social Media Handling",
+                                "description": "As a digital marketing strategy, social media handling can be used to increase awareness of new products and services, create a better user experience to connect with customers, and increase the potentiality of your brands."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "4",
+                    "title": "Graphics Design",
+                    "image": "assets/sitedata/graphics.png",
+                    "serviceData": {
+                        "heading": "Graphics Design",
+                        "title": "Graphics Design is Our Forte",
+                        "subtitle": "Groundbreaking design service with artistic innovation.The power of imagination is where pixels come alive and dreams take shape.",
+                        "item": [
+                            {
+                                "name": "Promotional Banners",
+                                "description": "Capture attention with stunning banners that make your brand shine! Elevate your marketing game with our eye-catching banner designs."
+                            },
+                            {
+                                "name": "Business Card Designs",
+                                "description": "Your brand's essence with our bespoke business designs, crafted to captivate and leave a lasting impression meticulously tailored to embody your distinct identity."
+                            },
+                            {
+                                "name": "Icon Making",
+                                "description": "Crafting exquisite emblems that epitomize individuality. Transforming visions into mesmerizing symbols of distinction."
+                            },
+                            {
+                                "name": "Business Flyer",
+                                "description": "Business's potential with best, designed to captivate and convert. Stand out from the crowd with our innovative creative and compelling content."
+                            },
+                            {
+                                "name": "Posters",
+                                "description": "Let our creativity bring your vision to life on stunning posters. Elevate your message with our professional poster designs."
+                            },
+                            {
+                                "name": "Ebook Design",
+                                "description": "Enhance your experience, creating visually captivating layouts that engage and immerse readers, ensuring a seamless and enjoyable reading experience."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "5",
+                    "title": "Video Editing",
+                    "image": "assets/sitedata/video.png",
+                    "serviceData": {
+                        "heading": "Video Editing",
+                        "title": "Start your video editing",
+                        "subtitle": "The powerful visuals that move your business forward.",
+                        "item": [
+                            {
+                                "name": "Film Making",
+                                "description": "Filmmaking for your specific needs is a trend that is increasing day by day. It has become the most powerful marketing and promotional tool. We create films as per your needs for product marketing."
+                            },
+                            {
+                                "name": "Advertisement Promo Video",
+                                "description": "The smart choice for your next video advertisement, made with stunning visuals and brandable templates. Create video advertisements that will get more clicks and increase revenue for your concern. Services are available for businesses of all sizes."
+                            },
+                            {
+                                "name": "Video Color Grading",
+                                "description": "Get expert colour grading and colour correction for all types of videos. Our experts in colour correction assist individuals with creative adjustments in transforming their raw footage into cinematic-quality videos. We are in charge of perfectly grading footage in accordance with standards."
+                            },
+                            {
+                                "name": "Short Promo Video",
+                                "description": "Choose the promo video that best fits your event, business, and product. A major percentage of customers would rather learn about a product or service through video, and the rest of the marketers say video helps increase their sales."
+                            },
+                            {
+                                "name": "Corporate Presentation",
+                                "description": "Modern slide designs not only save time but also provide exclusive, elegant, and unique graphic content. Visually appealing slides get maximum audience attention, which helps them relate to the presenter’s words."
+                            },
+                            {
+                                "name": "Infographic Video Making",
+                                "description": "Entertain and inform with exceptional, gorgeous, animated infographics. Ask for a service to become an expert infographic video maker in no time. It's as easy as choosing your preferred template and editing the text. Before you’ve finished your morning coffee, get started with your morning coffee."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "6",
+                    "title": "Mobile",
+                    "image": "assets/sitedata/mobile.png",
+                    "serviceData": {
+                        "heading": "Mobile Application",
+                        "title": "Mobile Application",
+                        "subtitle": "App development became simpler.In this exciting app development journey, start your own chapter. Every app is a journey to get going.",
+                        "item": [
+                            {
+                                "name": "Custom-made",
+                                "description": "Our accomplished team of developers create mobile applications that are personalized to meet your specific business requirements. We work assiduously to ensure that the application is tailored to your needs."
+                            },
+                            {
+                                "name": "User-Centric",
+                                "description": "We recognize the paramount importance of user experience and design our applications with a user-centric interface. This guarantees that your customers have a seamless experience while using your application."
+                            },
+                            {
+                                "name": "Cross-Platform",
+                                "description": "We develop mobile applications that are compatible with both iOS and Android platforms, enabling you to reach a wider audience."
+                            },
+                            {
+                                "name": "Punctual Delivery",
+                                "description": "We place a high premium on your time and ensure that your mobile application is developed and delivered within the agreed timeframe."
+                            },
+                            {
+                                "name": "Competitive Pricing",
+                                "description": "Our pricing structure is highly competitive and transparent, without any concealed charges. We offer affordable pricing for our services, without compromising on quality."
+                            },
+                            {
+                                "name": "24/7 Support",
+                                "description": "We provide round-the-clock support to our esteemed clients, ensuring that their queries are promptly and efficiently addressed."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "7",
+                    "title": "Logo Design",
+                    "image": "assets/sitedata/logo.png",
+                    "serviceData": {
+                        "heading": "Logo Design",
+                        "title": "Logo Design is Our Forte",
+                        "subtitle": "The true identity of your brand. Do more with your designs and creative visionaries. Creating brands to make them stand out.",
+                        "item": [
+                            {
+                                "name": "Custom Logo",
+                                "description": "This particularly defines your brand and best reflects your business specifications and expectations. Our team is an expert at delivering customised logo designs."
+                            },
+                            {
+                                "name": "Pre Made Logo",
+                                "description": "A wide range of premade logos is a great way to get affordable and quality logo design that can also make your brand unique from the rest."
+                            },
+                            {
+                                "name": "Illustrative Logo",
+                                "description": "Creative, colorful, and exquisitely illustrative logos that meet your business needs stand out in the competition."
+                            },
+                            {
+                                "name": "Iconic Logo",
+                                "description": "This type specifically symbolises your brand and services among your target audience. Creates a positive impression of your products."
+                            },
+                            {
+                                "name": "Typography Logo",
+                                "description": "The typography logo design services will help to drive a more active audience to your business with latest technological tools to create aesthetically pleasing typographic logos."
+                            },
+                            {
+                                "name": "Wordmark Logo",
+                                "description": "This specific kind has high recall values to grab the attention of your viewers through fascinating wordmark logo designs and convey your brand message."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "8",
+                    "title": "Lead Development",
+                    "image": "assets/sitedata/lead.png",
+                    "serviceData": {
+                        "heading": "Lead Generation",
+                        "title": "Lead Generation is Our Forte",
+                        "subtitle": "One of the biggest challenges of lead generation strategies to grow businesses is getting more customers.To attract the targeted audience, quality content is needed. Quality of the service being provided to drive more traffic and boost sales.",
+                        "item": [
+                            {
+                                "name": "Web-Page Optimization",
+                                "description": "For sales-specific marketing, knowing which clients or companies have viewed your website is necessary. Later, this information will be given to an owner for a precisely designed follow-up conversation to land more clients through web-page optimization."
+                            },
+                            {
+                                "name": "Daily website checkups",
+                                "description": "Not only to make sure the system is running smoothly. For which a weekly routine website scan is crucial. but also to make changes and improve the user interface whenever needed."
+                            },
+                            {
+                                "name": "Keep Updating Keywords",
+                                "description": "With similar keywords, you can get your website to rank higher. Using long-tail keywords to structure your web content is a good lead generation strategy tip."
+                            },
+                            {
+                                "name": "SEO Lead Creation",
+                                "description": "There are many forms of lead magnets that allow a conversation with the possible clients who are not ready to buy from you yet but can be persuaded."
+                            },
+                            {
+                                "name": "Blog Set Up",
+                                "description": "Try to incorporate it into your service and your blog posts as much as you can. Another good way to do that is to keep a keen eye on the feedback you get from customers."
+                            },
+                            {
+                                "name": "Using Social Media",
+                                "description": "To generate more leads and drive further traffic, we will advertise your service on different social media channels to promote your business."
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
