@@ -1,9 +1,9 @@
 import 'dart:async';
-import 'package:digitalwebber/view/dashboard/cms/aboutus_screen.dart';
-import 'package:digitalwebber/view/dashboard/cms/contact_screen.dart';
-import 'package:digitalwebber/view/dashboard/homescreen/home_screen.dart';
-import 'package:digitalwebber/view/dashboard/servicescreen/service_screen.dart';
-import 'package:digitalwebber/view/util/const.dart';
+import 'package:digitalwebber/view/dashboard_section/cms/aboutus_screen.dart';
+import 'package:digitalwebber/view/dashboard_section/cms/contact_screen.dart';
+import 'package:digitalwebber/view/dashboard_section/homescreen/home_screen.dart';
+import 'package:digitalwebber/view/dashboard_section/servicescreen/service_screen.dart';
+import 'package:digitalwebber/util/const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -28,12 +28,12 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
-          //FocusManager.instance.primaryFocus?.unfocus(),
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Digital Webber',
             theme: ThemeData(
               colorScheme: ColorScheme.fromSeed(seedColor: kPrimary),
+              // appBarTheme: const AppBarTheme(color: kPrimary),
               useMaterial3: true,
               textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
             ),

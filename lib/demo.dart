@@ -1,4 +1,4 @@
-import 'package:digitalwebber/view/util/const.dart';
+import 'package:digitalwebber/util/const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
