@@ -93,7 +93,7 @@ class _DashboardTabState extends State<DashboardTab> {
   final List _pages = [
     const HomeScreen(),
     const ServiceScreen(),
-    const ContactScreen(),
+    const ContactScreen(isBack: false),
     const AboutUsScreen()
   ];
   @override

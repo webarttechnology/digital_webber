@@ -18,17 +18,21 @@ class CustomRichTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-        text: TextSpan(
-      text: title,
-      children: [
-        TextSpan(
-            text: subtitle,
-            style: TextStyle(
-                fontWeight: fwNormal, height: 1.4.h, color: subColor)),
-      ],
-      style: TextStyle(
-          color: color ?? kBlack87, fontWeight: fontWeight ?? FontWeight.bold),
-    ));
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 3.h),
+      child: RichText(
+          text: TextSpan(
+        text: title,
+        children: [
+          TextSpan(
+              text: subtitle,
+              style: TextStyle(
+                  fontWeight: fwNormal, height: 1.4.h, color: subColor)),
+        ],
+        style: TextStyle(
+            color: color ?? kBlack87,
+            fontWeight: fontWeight ?? FontWeight.bold),
+      )),
+    );
   }
 }

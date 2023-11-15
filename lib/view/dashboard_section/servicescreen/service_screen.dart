@@ -39,189 +39,191 @@ class _ServiceScreenState extends State<ServiceScreen> {
   Widget build(BuildContext context) {
     return Container(
       color: kPrimary2,
-      child: Scaffold(
-        // backgroundColor: kWhite,
-        appBar: widget.isBack == true
-            ? AppBar(
-                leading: const BackButton(color: kWhite),
-                elevation: 5,
-                backgroundColor: kPrimary,
-                title: customText("Services", color: kWhite),
-              )
-            : null,
-        body: SafeArea(
-          child: SingleChildScrollView(
-            physics: const ScrollPhysics(),
-            child: Column(
-              children: [
-                Container(
-                    width: double.infinity,
-                    // height: 350.h,
-                    decoration: const BoxDecoration(
-                        gradient: LinearGradient(
-                            colors: <Color>[
-                          kPrimary,
-                          kPrimary2,
-                          kPrimary3,
-                          kWhite
+      child: SafeArea(
+        child: Scaffold(
+          // backgroundColor: kWhite,
+          appBar: widget.isBack == true
+              ? AppBar(
+                  leading: const BackButton(color: kWhite),
+                  elevation: 5,
+                  backgroundColor: kPrimary,
+                  title: customText("Services", color: kWhite),
+                )
+              : null,
+          body: SafeArea(
+            child: SingleChildScrollView(
+              physics: const ScrollPhysics(),
+              child: Column(
+                children: [
+                  Container(
+                      width: double.infinity,
+                      // height: 350.h,
+                      decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                              colors: <Color>[
+                            kPrimary,
+                            kPrimary2,
+                            kPrimary3,
+                            kWhite
+                          ],
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter)),
+                      padding: EdgeInsets.all(12.h),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 12.h),
+                          customLogo('assets/logo.png', size: 58, onTap: () {}),
+                          SizedBox(height: 36.h),
+                          customHeading(
+                            "“Assumptions are the termites of relationships.”",
+                            fontSize: 28.sp,
+                          ),
+                          SizedBox(height: 8.h),
+                          customText('―Henry Winkler.', color: kWhite),
+                          /*   customHeading(
+                            _serviceList[0]['quotes'],
+                            fontSize: 28.sp,
+                          ),
+                          customText(_serviceList[0]['author']), */
+                          SizedBox(height: 24.h),
+                          customText('Here We Provide Several Services !!!',
+                              fontSize: 18.sp, color: kBlack87),
                         ],
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter)),
-                    padding: EdgeInsets.all(12.h),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: 12.h),
-                        customLogo('assets/logo.png', size: 58, onTap: () {}),
-                        SizedBox(height: 36.h),
-                        customHeading(
-                          "“Assumptions are the termites of relationships.”",
-                          fontSize: 28.sp,
-                        ),
-                        SizedBox(height: 8.h),
-                        customText('―Henry Winkler.', color: kWhite),
-                        /*   customHeading(
-                          _serviceList[0]['quotes'],
-                          fontSize: 28.sp,
-                        ),
-                        customText(_serviceList[0]['author']), */
-                        SizedBox(height: 24.h),
-                        customText('Here We Provide Several Services !!!',
-                            fontSize: 18.sp, color: kBlack87),
-                      ],
-                    )),
-                SizedBox(height: 24.h),
-                Container(
-                    color: kWhite,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
-                    child: GridView.builder(
-                        physics: const NeverScrollableScrollPhysics(),
-                        shrinkWrap: true,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                crossAxisSpacing: 12,
-                                mainAxisSpacing: 12,
-                                childAspectRatio: 1),
-                        itemCount: serviceList.length,
-                        itemBuilder: (context, index) {
-                          var item = serviceList[index];
-                          return CardWidget(
-                            text: item[0].toString(),
-                            imageName: item[1].toString(),
-                            onTap: () {
-                              switch (index) {
-                                case 0:
-                                  Navigator.push(
+                      )),
+                  SizedBox(height: 24.h),
+                  Container(
+                      color: kWhite,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 12.w, vertical: 12.h),
+                      child: GridView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  crossAxisSpacing: 12,
+                                  mainAxisSpacing: 12,
+                                  childAspectRatio: 1),
+                          itemCount: serviceList.length,
+                          itemBuilder: (context, index) {
+                            var item = serviceList[index];
+                            return CardWidget(
+                              text: item[0].toString(),
+                              imageName: item[1].toString(),
+                              onTap: () {
+                                switch (index) {
+                                  case 0:
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                DesignTemplateScreen(
+                                                  index: index,
+                                                  headerData: serviceList,
+                                                  listItem: webList,
+                                                  iconList: iconData,
+                                                )));
+                                    break;
+                                  case 1:
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                DesignTemplateScreen(
+                                                  index: index,
+                                                  headerData: serviceList,
+                                                  listItem: seoList,
+                                                  iconList: iconData,
+                                                )));
+                                    break;
+                                  case 2:
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                DesignTemplateScreen(
+                                                  index: index,
+                                                  headerData: serviceList,
+                                                  listItem: smoList,
+                                                  iconList: iconData,
+                                                )));
+                                    break;
+                                  case 3:
+                                    Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
                                               DesignTemplateScreen(
                                                 index: index,
                                                 headerData: serviceList,
-                                                listItem: webList,
+                                                listItem: graphicsList,
                                                 iconList: iconData,
-                                              )));
-                                  break;
-                                case 1:
-                                  Navigator.push(
+                                              )),
+                                    );
+                                    break;
+                                  case 4:
+                                    Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
                                               DesignTemplateScreen(
                                                 index: index,
                                                 headerData: serviceList,
-                                                listItem: seoList,
+                                                listItem: videoList,
                                                 iconList: iconData,
-                                              )));
-                                  break;
-                                case 2:
-                                  Navigator.push(
+                                              )),
+                                    );
+                                    break;
+                                  case 5:
+                                    Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
                                               DesignTemplateScreen(
                                                 index: index,
                                                 headerData: serviceList,
-                                                listItem: smoList,
+                                                listItem: mobileList,
                                                 iconList: iconData,
-                                              )));
-                                  break;
-                                case 3:
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            DesignTemplateScreen(
-                                              index: index,
-                                              headerData: serviceList,
-                                              listItem: graphicsList,
-                                              iconList: iconData,
-                                            )),
-                                  );
-                                  break;
-                                case 4:
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            DesignTemplateScreen(
-                                              index: index,
-                                              headerData: serviceList,
-                                              listItem: videoList,
-                                              iconList: iconData,
-                                            )),
-                                  );
-                                  break;
-                                case 5:
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            DesignTemplateScreen(
-                                              index: index,
-                                              headerData: serviceList,
-                                              listItem: mobileList,
-                                              iconList: iconData,
-                                            )),
-                                  );
-                                  break;
-                                case 6:
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            DesignTemplateScreen(
-                                              index: index,
-                                              headerData: serviceList,
-                                              listItem: logoList,
-                                              iconList: iconData,
-                                            )),
-                                  );
-                                  break;
-                                case 7:
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            DesignTemplateScreen(
-                                              index: index,
-                                              headerData: serviceList,
-                                              listItem: leadList,
-                                              iconList: iconData,
-                                            )),
-                                  );
-                                  break;
+                                              )),
+                                    );
+                                    break;
+                                  case 6:
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              DesignTemplateScreen(
+                                                index: index,
+                                                headerData: serviceList,
+                                                listItem: logoList,
+                                                iconList: iconData,
+                                              )),
+                                    );
+                                    break;
+                                  case 7:
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              DesignTemplateScreen(
+                                                index: index,
+                                                headerData: serviceList,
+                                                listItem: leadList,
+                                                iconList: iconData,
+                                              )),
+                                    );
+                                    break;
 
-                                default:
-                                  null;
-                              }
-                            },
-                          );
-                        })),
-              ],
+                                  default:
+                                    null;
+                                }
+                              },
+                            );
+                          })),
+                ],
+              ),
             ),
           ),
         ),

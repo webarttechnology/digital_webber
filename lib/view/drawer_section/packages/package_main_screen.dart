@@ -1,4 +1,4 @@
-import 'package:digitalwebber/view/drawer_section/packages/website_package/website_pack_screen.dart';
+import 'package:digitalwebber/view/drawer_section/packages/website_package.dart';
 import 'package:digitalwebber/util/widgets_global/design_template_screen.dart';
 import 'package:digitalwebber/view/dashboard_section/homescreen/widgets/card_widget.dart';
 import 'package:digitalwebber/util/const.dart';
@@ -87,11 +87,13 @@ class _PackageScreenState extends State<PackageScreen> {
                       onTap: () {
                         switch (index) {
                           case 0:
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) =>
-                            //             const WebsitePackageScreen()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => WebsitePackageScreen(
+                                          title: item[0],
+                                          index: index,
+                                        )));
                             break;
                           /*  case 1:
                             Navigator.push(

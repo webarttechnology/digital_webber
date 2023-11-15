@@ -66,37 +66,35 @@ class CarrerWidget extends StatelessWidget {
                   title: "Interview Process : ",
                   subtitle: "HR & Technical (Basic Quality) Round",
                   subColor: Colors.grey.shade600),
-              SizedBox(height: 5.h),
               CustomRichTextWidget(
                   title: "Job type : ",
                   subtitle: "Full Time",
                   subColor: Colors.grey.shade600),
-              SizedBox(height: 5.h),
               CustomRichTextWidget(
                   title: "Night Shift : ",
                   subtitle: "9:00-6:00 am",
                   subColor: Colors.grey.shade600),
-              SizedBox(height: 5.h),
               CustomRichTextWidget(
                   title: "Job location : ",
                   subtitle: "Ergo Tower, Block EP&GP, Sector V, WB, Kol–700091",
                   subColor: Colors.grey.shade600),
-              SizedBox(height: 5.h),
               CustomRichTextWidget(
                   title: "Facilities : ",
                   subtitle: "Saturday Sunday fixed off.",
                   subColor: Colors.grey.shade600),
-              SizedBox(height: 5.h),
               CustomRichTextWidget(
                   title: "Salary : ",
                   subtitle: "10K to 16K+",
                   subColor: Colors.grey.shade600),
-              SizedBox(height: 5.h),
-              CustomRichTextWidget(
-                  title: "Contact No : ",
-                  subtitle: "9748677059",
-                  subColor: Colors.grey.shade600),
-              SizedBox(height: 5.h),
+              GestureDetector(
+                onTap: () {
+                  launchPhoneNumber("+91 9748677059");
+                },
+                child: const CustomRichTextWidget(
+                    title: "Contact No : ",
+                    subtitle: "+91 9748677059",
+                    subColor: kBlack87),
+              ),
             ]),
           )),
     );

@@ -3,7 +3,7 @@ import 'package:digitalwebber/view/drawer_section/career/career_screen.dart';
 import 'package:digitalwebber/view/dashboard_section/cms/aboutus_screen.dart';
 import 'package:digitalwebber/view/dashboard_section/cms/contact_screen.dart';
 import 'package:digitalwebber/view/dashboard_section/homescreen/home_screen.dart';
-import 'package:digitalwebber/view/drawer_section/widgets/drawer_list_tile_widget.dart';
+import 'package:digitalwebber/view/drawer_section/widgets/drawer_listtile_widget.dart';
 import 'package:digitalwebber/view/drawer_section/packages/package_main_screen.dart';
 import 'package:digitalwebber/view/dashboard_section/servicescreen/service_screen.dart';
 import 'package:digitalwebber/util/const.dart';
@@ -37,20 +37,31 @@ class DrawerMainScreen extends StatelessWidget {
                   customLogo('assets/logo.png', size: 58, onTap: () {}),
                   SizedBox(height: 24.h),
                   customHeading('Digital Webber', fontSize: 22.sp),
+                  SizedBox(height: 5.h),
+                  GestureDetector(
+                    onTap: () {
+                      launchPhoneNumber('+1 888-927-7332');
+                    },
+                    child: Row(
+                      children: [
+                        // customText("Toll Free :"),
+                        const Icon(
+                          Icons.call,
+                          color: kWhite,
+                          size: 18,
+                        ),
+                        SizedBox(width: 5.w),
+                        customHeading('+1 888-927-7332', fontSize: 14.sp),
+                      ],
+                    ),
+                  )
                 ],
               )),
           ListView.separated(
             itemCount: _drawerList.length,
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
-            separatorBuilder: (context, index) => const SizedBox(
-              height: 5,
-            ),
-            /*  Divider(
-              height: 8,
-              indent: .05.sw,
-              endIndent: .05.sw,
-            ), */
+            separatorBuilder: (context, index) => SizedBox(height: 5.h),
             itemBuilder: (context, index) {
               var item = _drawerList[index];
               return DrawerListTileWidget(
@@ -73,6 +84,7 @@ class DrawerMainScreen extends StatelessWidget {
                                   const ServiceScreen(isBack: true)));
                       break;
                     case 2:
+                      // launchWebsite("https://www.digitalwebber.com/packages");
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -80,7 +92,6 @@ class DrawerMainScreen extends StatelessWidget {
                       break;
                     case 3:
                       launchWebsite("https://digitalwebber.com/blogs/blogs/");
-                      // Scaffold.of(context).
                       // Navigator.push(
                       //     context,
                       //     MaterialPageRoute(

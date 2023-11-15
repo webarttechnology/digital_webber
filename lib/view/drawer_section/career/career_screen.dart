@@ -60,6 +60,10 @@ class _CareerScreenState extends State<CareerScreen> {
                     onTap: () {},
                   ),
                 ), */
+                SizedBox(height: 16.h),
+                customHeading('WE ARE HIRING !!!',
+                    fontSize: 22.sp, color: kBlack87),
+                SizedBox(height: 16.h),
                 Container(
                     color: kWhite,
                     padding:
@@ -99,8 +103,8 @@ class _CareerScreenState extends State<CareerScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      customHeading('WE ARE HIRING',
-                          fontSize: 22.sp, color: kBlack87),
+                      customHeading('Please Fill the Form.',
+                          fontSize: 18.sp, color: kBlack87),
                       SizedBox(height: 16.h),
                       customTextFormField(
                         hintText: 'Enter Your Full Name',

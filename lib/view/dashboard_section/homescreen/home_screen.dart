@@ -1,5 +1,6 @@
 import 'package:digitalwebber/demo.dart';
 import 'package:digitalwebber/util/widgets_global/design_template_screen.dart';
+import 'package:digitalwebber/view/dashboard_section/cms/contact_screen.dart';
 import 'package:digitalwebber/view/dashboard_section/homescreen/widgets/card_widget.dart';
 import 'package:digitalwebber/view/drawer_section/drawer_main_screen.dart';
 
@@ -88,9 +89,14 @@ class _HomeScreenState extends State<HomeScreen> {
                               'We are a full-service digital marketing firm that provides you with the ability to customize PPC, lead generation, inbound marketing, email campaigns, SEO-based responsive websites, marketing automation solutions, and more.',
                               color: kWhite),
                           SizedBox(height: 18.h),
-                          customOutlineButton(
-                            'Call Us',
-                          ),
+                          customOutlineButton('Enquiry', onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const ContactScreen(
+                                          isBack: true,
+                                        )));
+                          }),
                           SizedBox(height: 18.h),
                           customOutlineIconButton('+1 888-927-7332', onTap: () {
                             launchPhoneNumber('+1 888-927-7332');
@@ -181,7 +187,25 @@ class _HomeScreenState extends State<HomeScreen> {
                             text: data[0],
                             imageName: data[1],
                             onTap: () {
-                              switch (index) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          DesignTemplateScreen(
+                                            index: index,
+                                            headerData: cardDataList,
+                                            listItem: index == 0
+                                                ? websiteList
+                                                : index == 1
+                                                    ? mobileList
+                                                    : index == 2
+                                                        ? digitalList
+                                                        : index == 3
+                                                            ? videoList
+                                                            : null,
+                                            iconList: iconData,
+                                          )));
+                              /*      switch (index) {
                                 case 0:
                                   Navigator.push(
                                       context,
@@ -237,6 +261,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 default:
                                   null;
                               }
+                          */
                             },
                           );
                         }),
@@ -246,7 +271,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         EdgeInsets.symmetric(vertical: 36.h, horizontal: 18.w),
                     child: Column(
                       children: [
-                        customText('WHO WE ARE?', fontSize: 18.sp),
+                        customText('WHO WE ARE?',
+                            fontSize: 18.sp, color: kBlack87),
                         ListView.builder(
                             shrinkWrap: true,
                             itemCount: featureList.length,

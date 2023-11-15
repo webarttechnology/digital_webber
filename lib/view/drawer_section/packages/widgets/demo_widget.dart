@@ -2,14 +2,14 @@ import 'package:digitalwebber/util/const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class PackageWidget extends StatefulWidget {
-  const PackageWidget({super.key});
+class HomeWidget extends StatefulWidget {
+  const HomeWidget({super.key});
 
   @override
-  State<PackageWidget> createState() => _PackageWidgetState();
+  State<HomeWidget> createState() => _PackageWidgetState();
 }
 
-class _PackageWidgetState extends State<PackageWidget> {
+class _PackageWidgetState extends State<HomeWidget> {
   TabController? _nestedTabController;
 
   @override
